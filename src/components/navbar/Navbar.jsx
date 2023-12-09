@@ -11,7 +11,9 @@ import toggleDark from '../../assets/day.png'
 const Navbar = ({theme, setTheme}) => {
 
     const toggleMode = () => {
-        theme == 'light' ? setTheme('dark') : setTheme('light');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        console.log(`Changed theme from ${theme} to ${newTheme}`);
+        setTheme(newTheme);
     }
 
   return (
@@ -21,7 +23,7 @@ const Navbar = ({theme, setTheme}) => {
         alt="logo" 
         className='logo'
       />
-      
+
       <ul>
         <li>Home</li>
         <li>Link 2</li>
@@ -33,7 +35,7 @@ const Navbar = ({theme, setTheme}) => {
         <input type="text" placeholder='search' />
         <img 
             src={theme == 'light' ? searchIconLight : searchIconDark} 
-            alt="" 
+            alt="search box icon" 
         />
       </div>
 
